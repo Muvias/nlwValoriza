@@ -1,4 +1,7 @@
+import "reflect-metadata";
 import express from "express"; 
+
+import "./database"
 
 const app = express();
 
@@ -9,9 +12,5 @@ const app = express();
  * DELETE => Remover um dado
  * PATCH => Alterar uma informação específica
  */
-
-app.get("/test", (req, res) =>{
-    
-})
 
 app.listen(3000, () => console.log("Server is running"));
