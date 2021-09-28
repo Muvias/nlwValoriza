@@ -26,13 +26,13 @@ export function ensureAuthenticated(request: Request, response: Response, next: 
     const [, token] = authToken.split(" ")
 
     try {
-        const { sub } = verify( token , "5434d774ca8543cface83440c0d5a51b") as IPayload
+        const { sub } = verify( token, "5434d774ca8543cface83440c0d5a51b") as IPayload
 
         //Recuperar informações do usuário
         request.user_id = sub
 
         return next()
-    } catch (error) {
+    } catch (err) {
         return response.status(401).end()
     }
 
